@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VyW-CT-oSn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="6fA-2j-hSp">
+            <objects>
+                <viewController id="VyW-CT-oSn" customClass="ViewController" customModule="StateProgressButtonControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HOx-Jh-c01"/>
+                        <viewControllerLayoutGuide type="bottom" id="jel-ru-lbP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N91-Zt-7Ef">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2N-wj-xee" customClass="SPButton" customModule="StateProgressButtonControl" customModuleProvider="target">
+                                <rect key="frame" x="160" y="142.5" width="55" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rum-5r-hpV">
+                                        <rect key="frame" x="8" y="8.5" width="39.5" height="39.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Rum-5r-hpV" secondAttribute="height" multiplier="1:1" id="XmZ-eO-ies"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="add_listing">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Rum-5r-hpV" firstAttribute="width" secondItem="S2N-wj-xee" secondAttribute="width" multiplier="0.7" constant="1" id="3hB-7P-97p"/>
+                                    <constraint firstAttribute="height" constant="55" id="7Hi-xk-DTA"/>
+                                    <constraint firstAttribute="width" constant="55" id="7hY-M2-pWZ"/>
+                                    <constraint firstItem="Rum-5r-hpV" firstAttribute="centerX" secondItem="S2N-wj-xee" secondAttribute="centerX" id="Yrh-b5-O29"/>
+                                    <constraint firstItem="Rum-5r-hpV" firstAttribute="centerY" secondItem="S2N-wj-xee" secondAttribute="centerY" id="ixB-fe-ZKv"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="button" destination="Rum-5r-hpV" id="g9O-HE-kWz"/>
+                                </connections>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-y8-3Af">
+                                <rect key="frame" x="84.5" y="259" width="206" height="29"/>
+                                <segments>
+                                    <segment title="Disabled"/>
+                                    <segment title="Enabled"/>
+                                    <segment title="Selected"/>
+                                </segments>
+                                <connections>
+                                    <action selector="statesSegmentControlActionTriggred:" destination="VyW-CT-oSn" eventType="valueChanged" id="bM6-b7-am7"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOk-FW-3Lj">
+                                <rect key="frame" x="84.5" y="357" width="206" height="29"/>
+                                <segments>
+                                    <segment title="0%"/>
+                                    <segment title="30%"/>
+                                    <segment title="60%"/>
+                                    <segment title="100%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="progressSegmentControlActionTriggred:" destination="VyW-CT-oSn" eventType="valueChanged" id="qZQ-vu-gwL"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="States :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT6-XU-lys">
+                                <rect key="frame" x="84.5" y="230" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lga-cz-SoO">
+                                <rect key="frame" x="84.5" y="328" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S2N-wj-xee" firstAttribute="top" secondItem="HOx-Jh-c01" secondAttribute="bottom" constant="122.5" id="1Te-NF-c5D"/>
+                            <constraint firstItem="HOk-FW-3Lj" firstAttribute="top" secondItem="lga-cz-SoO" secondAttribute="bottom" constant="8" id="6TG-1y-ctV"/>
+                            <constraint firstItem="sl4-y8-3Af" firstAttribute="centerX" secondItem="N91-Zt-7Ef" secondAttribute="centerX" id="7bZ-hH-DC9"/>
+                            <constraint firstItem="sl4-y8-3Af" firstAttribute="top" secondItem="vT6-XU-lys" secondAttribute="bottom" constant="8" id="CTs-yt-pIj"/>
+                            <constraint firstItem="HOk-FW-3Lj" firstAttribute="top" secondItem="sl4-y8-3Af" secondAttribute="bottom" constant="70" id="Cba-TK-bFu"/>
+                            <constraint firstItem="HOk-FW-3Lj" firstAttribute="leading" secondItem="lga-cz-SoO" secondAttribute="leading" id="CoL-tM-HSO"/>
+                            <constraint firstItem="HOk-FW-3Lj" firstAttribute="leading" secondItem="sl4-y8-3Af" secondAttribute="leading" id="QFe-vM-wFf"/>
+                            <constraint firstItem="S2N-wj-xee" firstAttribute="centerX" secondItem="N91-Zt-7Ef" secondAttribute="centerX" id="Vky-j2-uja"/>
+                            <constraint firstItem="sl4-y8-3Af" firstAttribute="top" secondItem="S2N-wj-xee" secondAttribute="bottom" constant="61.5" id="dCi-Iz-vOl"/>
+                            <constraint firstItem="HOk-FW-3Lj" firstAttribute="centerX" secondItem="N91-Zt-7Ef" secondAttribute="centerX" id="qnp-SH-1fh"/>
+                            <constraint firstItem="HOk-FW-3Lj" firstAttribute="trailing" secondItem="sl4-y8-3Af" secondAttribute="trailing" id="wC7-mk-JMk"/>
+                            <constraint firstItem="sl4-y8-3Af" firstAttribute="leading" secondItem="vT6-XU-lys" secondAttribute="leading" id="zsm-LZ-ncL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="SPButtonControl" destination="S2N-wj-xee" id="gPK-ZW-QYD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ua2-pN-ERm" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="138.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add_listing" width="30" height="30"/>
+    </resources>
+</document>
